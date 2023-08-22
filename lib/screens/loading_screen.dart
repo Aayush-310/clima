@@ -6,6 +6,8 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class LoadingScreen extends StatefulWidget {
+  const LoadingScreen({super.key});
+
   @override
   _LoadingScreenState createState() => _LoadingScreenState();
 }
@@ -65,14 +67,14 @@ class _LoadingScreenState extends State<LoadingScreen> {
               onPressed: () {
                 getLocation();
               },
-              child: Text('Get Location'),
+              child: const Text('Get Location'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 takeAndDisplayImage();
               },
-              child: Text('Take Image'),
+              child: const Text('Take Image'),
             ),
             if (_imageFile != null)
               _imageFile!.path.contains('http') // Check if it's a network image
@@ -97,7 +99,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
                     onPressed: () {
                       uploadImage();
                     },
-                    child: Text('Upload'),
+                    child: const Text('Upload'),
                   ),
                   ElevatedButton(
                     onPressed: () {
@@ -105,7 +107,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
                         _imageFile = null;
                       });
                     },
-                    child: Text('Retake'),
+                    child: const Text('Retake'),
                   ),
                 ],
               ),
@@ -127,4 +129,4 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 }
 
-void main() => runApp(MaterialApp(home: LoadingScreen()));
+void main() => runApp(const MaterialApp(home: LoadingScreen()));
